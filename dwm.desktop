@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=dwm
+Comment=dwm
+Exec=dwm-wrapper
+Type=Application
+Keywords=wm;tiling
