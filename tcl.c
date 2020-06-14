@@ -8,7 +8,7 @@ tcl(Monitor * m)
 	for (n = 0, c = nexttiled(m->clients); c;
 	        c = nexttiled(c->next), n++);
 
-	if (n == 0)
+	if (n == 0) //TODO: make this a switch case for 0, 1, 2, 3 and >3
 		return;
 
 	c = nexttiled(m->clients);
