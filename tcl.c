@@ -13,9 +13,9 @@ tcl(Monitor * m)
 
 	c = nexttiled(m->clients);
 
-	mw = m->mfact * m->ww;
+//	mw = m->mfact * m->ww;
 //	In three colums, everything should have the same size
-//	mw = 0.33 * m->ww;
+	mw = 0.33 * m->ww;
 	sw = (m->ww - mw) / 2;
 	bdw = (2 * c->bw);
 	resize(c,
