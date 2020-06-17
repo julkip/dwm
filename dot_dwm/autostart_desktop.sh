@@ -4,4 +4,4 @@ nitrogen --restore
 picom -b
 blueman-applet &
 dunst &
-~/.dwm/updatebar.sh &
+dwmblocks &

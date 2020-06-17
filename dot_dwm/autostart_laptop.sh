@@ -5,4 +5,4 @@ picom -b
 nm-applet &
 blueman-applet &
 dunst &
-~/.dwm/updatebar.sh &
+dwmblockn &
