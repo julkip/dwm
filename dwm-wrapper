@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-if [$(hostname) -eq "kriemhild"]
+if [ "$(hostname)" == "kriemhild" ]
 then
 	# xrandr-stuff for laptop
 	xrandr | grep "DP2-3 connected"
