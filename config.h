@@ -45,7 +45,8 @@ static const Rule rules[] = {
 	{ "Claws-mail", NULL,  NULL,           1 << 5,    0,          0,           0,        -1 },
 	{ "Alacritty", NULL,   NULL,           0,         0,          1,           0,        -1 },
 	{ "cool-retro-term", NULL, NULL,       0,         0,          1,           0,        -1 },
-	{ "Godot_Engine", NULL, NULL,          0,         1,          1,           0,        -1 },
+	{ "Godot", "Godot_Editor", NULL,       0,         0,          0,           1,        -1 },
+	{ "Godot", "Godot_Engine", NULL,       0,         1,          0,           1,        -1 },
 };
 
 /* layout(s) */
