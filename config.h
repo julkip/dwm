@@ -36,17 +36,18 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-//	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "discord", NULL,     NULL,           0,         0,          0,           0,        -1 },
-	{ "TelegramDesktop", NULL, NULL,       0,         0,          0,           0,        -1 },
-	{ "qutebrowser", NULL, NULL,           1 << 1,    0,          0,           0,        -1 },
-	{ "Spotify",  NULL,    NULL,           1 << 4,    0,          0,           0,        -1 },
-	{ "Claws-mail", NULL,  NULL,           1 << 5,    0,          0,           0,        -1 },
-	{ "Alacritty", NULL,   NULL,           0,         0,          1,           0,        -1 },
-	{ "cool-retro-term", NULL, NULL,       0,         0,          1,           0,        -1 },
-	{ "Godot", "Godot_Editor", NULL,       0,         0,          0,           1,        -1 },
-	{ "Godot", "Godot_Engine", NULL,       0,         1,          0,           1,        -1 },
+	/* class     instance  title           tags mask  isfloating  monitor */
+//	{ "Gimp",    NULL,     NULL,           0,         1,          -1 },
+	{ "discord", NULL,     NULL,           0,         0,          -1 },
+	{ "TelegramDesktop", NULL, NULL,       0,         0,          -1 },
+	{ "qutebrowser", NULL, NULL,           1 << 1,    0,          -1 },
+	{ "Spotify",  NULL,    NULL,           1 << 4,    0,          -1 },
+	{ "Claws-mail", NULL,  NULL,           1 << 5,    0,          -1 },
+	{ "Alacritty", NULL,   NULL,           0,         0,          -1 },
+	{ "cool-retro-term", NULL, NULL,       0,         0,          -1 },
+	{ "Godot", "Godot_Editor", NULL,       0,         0,          -1 },
+	{ "Godot", "Godot_Engine", NULL,       0,         1,          -1 },
+	{ "Godot", "Godot_ProjectList", NULL,  0,         0,          -1 },
 };
 
 /* layout(s) */
