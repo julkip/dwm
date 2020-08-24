@@ -6,7 +6,6 @@
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int rmaster            = 1;        /* 1 means master-area is initially on the right */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -36,16 +35,18 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-//	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "discord", NULL,     NULL,           0,         0,          0,           0,        -1 },
-	{ "TelegramDesktop", NULL, NULL,       0,         0,          0,           0,        -1 },
-	{ "qutebrowser", NULL, NULL,           1 << 1,    0,          0,           0,        -1 },
-	{ "Spotify",  NULL,    NULL,           1 << 4,    0,          0,           0,        -1 },
-	{ "Claws-mail", NULL,  NULL,           1 << 5,    0,          0,           0,        -1 },
-	{ "Alacritty", NULL,   NULL,           0,         0,          1,           0,        -1 },
-	{ "cool-retro-term", NULL, NULL,       0,         0,          1,           0,        -1 },
-	{ "Godot_Engine", NULL, NULL,          0,         1,          1,           0,        -1 },
+	/* class     instance  title           tags mask  isfloating  monitor */
+//	{ "Gimp",    NULL,     NULL,           0,         1,          -1 },
+	{ "discord", NULL,     NULL,           0,         0,          -1 },
+	{ "TelegramDesktop", NULL, NULL,       0,         0,          -1 },
+	{ "qutebrowser", NULL, NULL,           1 << 1,    0,          -1 },
+	{ "Spotify",  NULL,    NULL,           1 << 4,    0,          -1 },
+	{ "Claws-mail", NULL,  NULL,           1 << 5,    0,          -1 },
+	{ "Alacritty", NULL,   NULL,           0,         0,          -1 },
+	{ "cool-retro-term", NULL, NULL,       0,         0,          -1 },
+	{ "Godot", "Godot_Editor", NULL,       0,         0,          -1 },
+	{ "Godot", "Godot_Engine", NULL,       0,         1,          -1 },
+	{ "Godot", "Godot_ProjectList", NULL,  0,         0,          -1 },
 };
 
 /* layout(s) */
