@@ -28,7 +28,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8" };
+static const char *tags[] = { "1", "2", "3", "4", "5"};//, "6", "7", "8" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -41,7 +41,7 @@ static const Rule rules[] = {
 	{ "TelegramDesktop", NULL, NULL,       0,         0,          -1 },
 	{ "qutebrowser", NULL, NULL,           1 << 1,    0,          -1 },
 	{ "Spotify",  NULL,    NULL,           1 << 4,    0,          -1 },
-	{ "Claws-mail", NULL,  NULL,           1 << 5,    0,          -1 },
+	{ "Claws-mail", NULL,  NULL,           0,         0,          -1 },
 	{ "Alacritty", NULL,   NULL,           0,         0,          -1 },
 	{ "cool-retro-term", NULL, NULL,       0,         0,          -1 },
 	{ "Godot", "Godot_Editor", NULL,       0,         0,          -1 },
@@ -65,9 +65,9 @@ static const Layout layouts[] = {
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-	{ ControlMask,                  KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ ControlMask|ShiftMask,        KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -81,7 +81,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = launchercmd } },
+	{ MODKEY,                       XK_a,      spawn,          {.v = launchercmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_d,      focusstack,     {.i = +1 } },
@@ -96,11 +96,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ControlMask,           XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_l,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 //	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
+	{ MODKEY,                       XK_f,      togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglermaster,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -108,14 +108,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_F1,                     0)
-	TAGKEYS(                        XK_F2,                     1)
-	TAGKEYS(                        XK_F3,                     2)
-	TAGKEYS(                        XK_F4,                     3)
-	TAGKEYS(                        XK_F5,                     4)
-	TAGKEYS(                        XK_F6,                     5)
-	TAGKEYS(                        XK_F7,                     6)
-	TAGKEYS(                        XK_F8,                     7)
+	TAGKEYS(                        XK_udiaeresis,             0)
+	TAGKEYS(                        XK_odiaeresis,             1)
+	TAGKEYS(                        XK_adiaeresis,             2)
+	TAGKEYS(                        XK_p,                      3)
+	TAGKEYS(                        XK_z,                      4)
+//	TAGKEYS(                        XK_F6,                     5)
+//	TAGKEYS(                        XK_F7,                     6)
+//	TAGKEYS(                        XK_F8,                     7)
 //	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_x,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_x,      quit,           {1} },
