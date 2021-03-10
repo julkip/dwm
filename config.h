@@ -78,11 +78,15 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-b", NULL };
 static const char *launchercmd[] = { "rofi", "-show", "drun", "-modi", "drun"};
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *screenshotdesktopcmd[] = { "maim", "~/`date screenshot-+%m%d%Y-%H%M%S.png`" };
+static const char *screenshotareacmd[] = { "maim", "-s", "~/`date screenshot-+%m%d%Y-%H%M%S.png`" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_a,      spawn,          {.v = launchercmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = screenshotareacmd} },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotdesktopcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_d,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_r,      focusstack,     {.i = +1 } },
