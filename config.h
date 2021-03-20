@@ -28,7 +28,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5"};//, "6", "7", "8" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -78,8 +78,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-b", NULL };
 static const char *launchercmd[] = { "rofi", "-show", "drun", "-modi", "drun"};
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *screenshotdesktopcmd[] = { "maim", "~/`date screenshot-+%m%d%Y-%H%M%S.png`" };
-static const char *screenshotareacmd[] = { "maim", "-s", "~/`date screenshot-+%m%d%Y-%H%M%S.png`" };
+static const char *screenshotdesktopcmd[] = { "screenshotdesktop.sh" };
+static const char *screenshotareacmd[] = { "screenshotarea.sh" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -89,16 +89,20 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotdesktopcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_d,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_r,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Left,   focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Down,   focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_r,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Up,     focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_t,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Right,  focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_Next,   incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_Prior,  incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ControlMask,           XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_l,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[2]} },
@@ -112,14 +116,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_udiaeresis,             0)
-	TAGKEYS(                        XK_odiaeresis,             1)
-	TAGKEYS(                        XK_adiaeresis,             2)
-	TAGKEYS(                        XK_p,                      3)
-	TAGKEYS(                        XK_z,                      4)
-//	TAGKEYS(                        XK_F6,                     5)
-//	TAGKEYS(                        XK_F7,                     6)
-//	TAGKEYS(                        XK_F8,                     7)
+	TAGKEYS(                        XK_F1,                     0)
+	TAGKEYS(                        XK_F2,                     1)
+	TAGKEYS(                        XK_F3,                     2)
+	TAGKEYS(                        XK_F4,                     3)
+	TAGKEYS(                        XK_F5,                     4)
+	TAGKEYS(                        XK_F6,                     5)
+	TAGKEYS(                        XK_F7,                     6)
+	TAGKEYS(                        XK_F8,                     7)
 //	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_x,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_x,      quit,           {1} },
