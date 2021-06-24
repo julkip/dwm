@@ -2,3 +2,5 @@
 *.rej
 *.o
 dwm
+elwms
+.sconsign.dblite
