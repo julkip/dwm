@@ -80,6 +80,7 @@ static const char *launchercmd[] = { "rofi", "-show", "drun", "-modi", "drun"};
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *screenshotdesktopcmd[] = { "~/.local/bin/screenshotdesktop.sh" };
 static const char *screenshotareacmd[] = { "~/.local/bin/screenshotarea.sh" };
+static const char *slockcmd[] = { "slock" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -127,6 +128,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                     8)
 	{ MODKEY|ShiftMask,             XK_x,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_x,      quit,           {1} },
+	{ MODKEY,                       XK_w,      spawn,         {.v = slockcmd } },
 };
 
 /* button definitions */
