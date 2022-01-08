@@ -2,7 +2,7 @@ env = Environment()
 
 sources = ['dwm.c', 'drw.c', 'util.c']
 
-wm = env.Program(target='elwms', source=sources)
+wm = env.Program(target='dwm', source=sources)
 env.Append(CFLAGS = ['-std=c99', '-pedantic', '-Wall', '-Wno-deprecated-declarations', '-Os'])
 env.Append(CPPFLAGS = ['-D_DEFAULT_SOURCE', '-D_BSD_SOURCE', '-D_POSIX_C_SOURCE=2'])
 env.Append(CPPDEFINES = {'VERSION' : '\\"0.01\\"'})
