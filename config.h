@@ -1,10 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 
 /* include Layouts */
-#include "tcl.c"
+//#include "tcl.c"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int rmaster            = 1;        /* 1 means master-area is initially on the right */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -52,14 +53,14 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.40; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "|||",      tcl },
+//	{ "|||",      tcl },
 };
 
 /* key definitions */
@@ -107,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
+//	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 //	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_f,      togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglermaster,  {0} },
