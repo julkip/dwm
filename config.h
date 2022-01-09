@@ -1,8 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-/* include Layouts */
-//#include "tcl.c"
-
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 4;        /* gaps between windows */
@@ -30,6 +27,9 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8" };
+
+/* include Layouts */
+#include "tcl.c"
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-//	{ "|||",      tcl },
+	{ "|||",      tcl },
 };
 
 /* key definitions */
@@ -108,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[2]} },
-//	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 //	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_f,      togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglermaster,  {0} },
